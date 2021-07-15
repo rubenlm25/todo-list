@@ -1,5 +1,5 @@
 import { Task } from './../../Task';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-task-item',
@@ -7,10 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./task-item.component.scss']
 })
 export class TaskItemComponent implements OnInit {
-  @Input() task: Task
+  @Input() task: Task;
+  @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
   constructor() { }
   status:string = 'disable'
   ngOnInit(): void {
   }
-
+  onDelete(task){
+    this.onDeleteTask.emit(task);
+      
+  }
 }
