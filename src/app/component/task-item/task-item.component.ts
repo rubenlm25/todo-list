@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TaskItemComponent implements OnInit {
   @Input() task: Task
   constructor() { }
-
+  status:string = 'disable'
   ngOnInit(): void {
   }
 
