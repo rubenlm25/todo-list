@@ -1,8 +1,8 @@
 .input {
     display: flex;
     align-items: center;
-    width: 540px;
-    height: 64px;
+    width: 585px;
+    height: 65px;
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif;
     margin: 0 auto;
@@ -19,7 +19,12 @@
         border: 1px solid #E3E4F1;
         border-radius: 50%;
         cursor: pointer;
-
+        appearance: none;
+    }
+    .input-checkbox:checked {
+        background-image: url("../../../assets/images/icon-check.svg"),linear-gradient(#57DDFF,#C058F3);
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .input-text {

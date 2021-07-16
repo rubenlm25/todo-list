@@ -4,19 +4,13 @@
       "id": 1,
       "text": "Complete online Javascript course",
       "state": false,
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 2,
       "text": "Jog around the park 3x",
       "state": true,
-      "reminder": false
-    },
-    {
-      "id": 3,
-      "text": "10 minutes meditation",
-      "state": true,
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 4,
