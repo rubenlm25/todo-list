@@ -24,6 +24,11 @@
         cursor: pointer;
 
     }
+    .task-checkbox.reminder{
+        background-image: url("../../../assets/images/icon-check.svg"),linear-gradient(#57DDFF,#C058F3);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
     .task-text {
         text-decoration: none;

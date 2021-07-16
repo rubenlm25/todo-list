@@ -1,5 +1,5 @@
-<div class="task" [ngClass]="status" (mouseover)="status='enable'" (mouseout)="status='disable'" >
-    <div class="task-checkbox"></div>
+<div class="task" [ngClass]="status" (mouseover)="status='enable'" (mouseout)="status='disable'"  >
+    <div class="task-checkbox" [ngClass]="{reminder: task.reminder}" (click)="onToogle(task)"></div>
     <div class="task-text">{{ task.text }}</div>
     <img src="../../../assets/images/icon-cross.svg" alt="icon-cross" class="cross" (click)="onDelete(task)">
 </div>
