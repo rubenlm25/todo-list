@@ -1,8 +1,8 @@
-<form class="input">
+<form class="add-form" (ngSubmit)="onSubmit()">
   <label for="reminder">
-    <input class="input-checkbox" type="checkbox">
+    <input class="input-checkbox" type="checkbox" [(ngModel)]="reminder" name="reminder">
   </label>
   <label for="text">
-    <input type="text" placeholder="Create a new todo ..." class="input-text">
+    <input type="text" placeholder="Create a new todo ..." class="input-text"[(ngModel)]="text" name="text">
   </label>
 </form>

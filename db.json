@@ -3,32 +3,37 @@
     {
       "id": 1,
       "text": "Complete online Javascript course",
-      "state": false,
       "reminder": true
     },
     {
       "id": 2,
       "text": "Jog around the park 3x",
-      "state": true,
       "reminder": true
     },
     {
       "id": 4,
       "text": "Read for 1 hour",
-      "state": true,
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 5,
       "text": "Pick up groceries",
-      "state": true,
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 6,
       "text": "Complete Todo App on Frontend Mentor",
-      "state": true,
       "reminder": false
+    },
+    {
+      "text": "salut",
+      "reminder": true,
+      "id": 7
+    },
+    {
+      "text": "Audrey",
+      "reminder": false,
+      "id": 8
     }
   ]
 }
