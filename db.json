@@ -13,7 +13,7 @@
     {
       "id": 4,
       "text": "Read for 1 hour",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 5,
