@@ -21,4 +21,13 @@ export class TaskItemComponent implements OnInit {
   onToogle(task){
     this.onToogleReminder.emit(task);
   }
+  // test(){
+  //   let yoo=document.getElementsByClassName("task")
+  //   let compteur=0;
+  //   for(var i=0; i< yoo.length; i++){
+  //     compteur++;
+  // }
+  // console.log(compteur);
+  
+  // }
 }

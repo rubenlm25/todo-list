@@ -22,8 +22,13 @@ header {
         margin-bottom: 40px;
 
         img {
-            width: 25px;
-            height: 25px;
+            content: url("../../../assets/images/icon-moon.svg");
         }
     }
+}
+.header.dark{
+    background-image: url("../../../assets/images/bg-desktop-dark.jpg");
+}
+#toogle.dark{
+    content: url("../../../assets/images/icon-sun.svg");
 }
