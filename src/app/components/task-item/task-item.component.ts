@@ -1,4 +1,4 @@
-import { Task } from './../../Task';
+import { Task } from '../../Task';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
