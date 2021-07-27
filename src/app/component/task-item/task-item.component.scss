@@ -42,6 +42,10 @@
         line-height: 18px;
         letter-spacing: -0.25px;
     }
+    .task-text.reminder{
+        text-decoration: line-through;
+        color: #D1D2DA;
+    }
 
     .task-text:focus {
         outline: none;
@@ -58,5 +62,9 @@
     }
 }
 .task.dark{
-    background-color: black;
+    background-color: #25273D;
+    border-bottom: #393A4B solid;
+    .task-text.reminder{
+        color: #4D5067;
+    }
 }
