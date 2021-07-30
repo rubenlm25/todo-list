@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
+import { TaskOptionComponent } from './components/task-option/task-option.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
     HeaderComponent,
     AddTaskComponent,
     TasksComponent,
-    TaskItemComponent
+    TaskItemComponent,
+    TaskOptionComponent
   ],
   imports: [
     BrowserModule,

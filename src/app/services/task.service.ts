@@ -30,4 +30,13 @@ export class TaskService {
   addTask(task: Task):Observable<Task> {
     return this.http.post<Task>(this.apiUrl, task, httpOption);
   }
-}
+//   itemLeft(task: Task){
+//     let count = 0;
+//     for(let i = 0 ; i<this.getTasks.length;i++){
+//       if(task[i].reminder == true){
+//         count++;
+//       }
+//     }
+//     return count;
+//   }
+ }

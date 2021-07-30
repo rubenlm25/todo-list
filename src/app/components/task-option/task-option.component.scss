@@ -1,0 +1,18 @@
+.task-option{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 540px;
+    height: 64px;
+    margin: 0 auto;
+    top: -135px;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: relative;
+    color: #9495A5;
+    .item-filter{
+        display: flex;
+        flex-direction: row;
+        font-weight: bold;
+    }
+}
