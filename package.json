@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "json-server --watch https://todo-json-lomaru.herokuapp.com/tasks"
+    "server": "json-server --watch db.json --port5000"
   },
   "private": true,
   "dependencies": {

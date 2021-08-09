@@ -1,6 +1,9 @@
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
-<app-task-item *ngFor="let task of tasks" 
+<app-task-item *ngFor="let task of tasksFiltered" 
 [task]="task" 
 (onDeleteTask)="deleteTask(task)"
 (onToogleReminder)="toogleReminder(task)"
-></app-task-item>
+>
+</app-task-item>
+<app-task-option [itemLeft]="onCount(tasks)" (filterArg)="onTest($event)"></app-task-option>
+

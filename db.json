@@ -3,7 +3,7 @@
     {
       "id": 1,
       "text": "Complete online Javascript course",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 2,
@@ -19,6 +19,11 @@
       "id": 5,
       "text": "Pick up groceries",
       "reminder": true
+    },
+    {
+      "id": 6,
+      "text": "Complete Todo App on Frontend Mentor",
+      "reminder": false
     }
   ]
 }
