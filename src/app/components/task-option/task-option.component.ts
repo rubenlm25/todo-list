@@ -1,6 +1,6 @@
 import { TaskService } from './../../services/task.service';
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
-import { Task } from 'src/app/Task';
+
 
 
 @Component({
@@ -11,9 +11,11 @@ import { Task } from 'src/app/Task';
 export class TaskOptionComponent implements OnInit {
   @Input() itemLeft = '';
   @Output() filterArg = new EventEmitter();
+  @Output() clearTask = new EventEmitter();
   filterTodo :string = 'all';
+  variableClear :boolean = true
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +25,11 @@ export class TaskOptionComponent implements OnInit {
   filterChange(params){
     this.filterTodo = params;
     this.onChangeFilter(params);
+  }
+
+  onClearTask(variableClear){
+    variableClear=!variableClear;
+    this.clearTask.emit(variableClear);
   }
 
   

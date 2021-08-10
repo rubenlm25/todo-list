@@ -1,7 +1,46 @@
 .task-option{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 540px;
+    height: 64px;
+    margin: 0 auto;
+    position: relative;
+    background-color: white;
+    top: -150px;
+    text-decoration: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    color: #9495A5;
     .filter{
-        .active{
-            color: blue;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .all:hover{
+            color: #494C6B;
+            cursor: pointer;
         }
+        .active:hover{
+            color: #494C6B;
+            cursor: pointer;
+
+        }
+        .completed:hover{
+            color: #494C6B;
+            cursor: pointer;
+
+        }
+        .selected{
+            color:#3A7CFD;
+        }
+        .selected:hover{
+            color:#3A7CFD;
+            cursor: text;
+        }
+    }
+    .clear:hover{
+        color: #494C6B;
+        cursor: pointer;
     }
 }

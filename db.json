@@ -1,29 +1,9 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Complete online Javascript course",
-      "reminder": true
-    },
-    {
-      "id": 2,
-      "text": "Jog around the park 3x",
-      "reminder": true
-    },
-    {
-      "id": 4,
-      "text": "Read for 1 hour",
-      "reminder": false
-    },
-    {
-      "id": 5,
-      "text": "Pick up groceries",
-      "reminder": true
-    },
-    {
-      "id": 6,
-      "text": "Complete Todo App on Frontend Mentor",
-      "reminder": false
+      "text": "bgnjknbjy",
+      "reminder": false,
+      "id": 1
     }
   ]
 }

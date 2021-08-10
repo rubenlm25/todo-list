@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { TaskService } from '../../services/task.service';
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/Task';
@@ -12,6 +13,7 @@ export class TasksComponent implements OnInit {
   tasks: Task[] = [];
   tasksFiltered: Task[] = [];
   itemLeft: number;
+  filter: string = 'all';
   
   constructor(private taskService: TaskService) { }
 
@@ -23,18 +25,18 @@ export class TasksComponent implements OnInit {
     this.taskService
     .deleteTask(task)
     .subscribe(
-      () => (this.tasks = this.tasks.filter((t) => t.id !== task.id))
+      () => (this.tasksFiltered = this.tasksFiltered.filter((t) => t.id !== task.id))
     );
   }
   toogleReminder(task: Task){
     task.reminder = !task.reminder;
     this.taskService.updateTaskReminder(task).subscribe();
-
+    this.onTest(this.filter);
     
   }
 
   addTask(task: Task){
-    this.taskService.addTask(task).subscribe((task)=>(this.tasks.push(task)));
+    this.taskService.addTask(task).subscribe((task)=>(this.tasksFiltered.push(task)));
     
   }
 
@@ -58,5 +60,31 @@ export class TasksComponent implements OnInit {
       default:
         this.taskService.getTasks().subscribe((tasks) => this.tasksFiltered = tasks);
     }
+    this.filter=params;
+  }
+  onClear(params){
+    this.taskService.getTasks().subscribe((tasks) => this.tasksFiltered = tasks);
+    // console.log(this.tasks);
+    let testo = this.tasksFiltered.length;
+
+    
+    // let taille = cleartask.length
+    // console.log(taille);
+    
+    for(let i = 0;i<testo;i++){
+      if(this.tasksFiltered[i].reminder == true){
+        this.taskService
+        .deleteTask(this.tasksFiltered[i])
+        .subscribe(
+          () => (this.tasksFiltered = this.tasksFiltered.filter((t) => t.id !== this.tasksFiltered[i].id))
+        );
+      }
+    }
+
+        
+
+    this.onTest(this.filter);
+    console.log('done');
+    
   }
 }

@@ -1,8 +1,9 @@
 <div class="task-option">
     <div class="item-left"> {{itemLeft}} item left</div>
     <div class="filter">
-        <div class="all" (click)="filterChange('all')" [ngClass]="{'active':filterTodo == 'all'}" >All</div>
-        <div class="active" (click)="filterChange('active')" [ngClass]="{'active':filterTodo == 'active'}">Active</div>
-        <div class="completed" (click)="filterChange('completed')" [ngClass]="{'active':filterTodo == 'completed'}">Completed</div>
+        <div class="all" (click)="filterChange('all')" [ngClass]="{'selected':filterTodo == 'all'}" >All&nbsp;</div>
+        <div class="active" (click)="filterChange('active')" [ngClass]="{'selected':filterTodo == 'active'}">Active&nbsp;</div>
+        <div class="completed" (click)="filterChange('completed')" [ngClass]="{'selected':filterTodo == 'completed'}">Completed</div>
     </div>
+    <div class="clear" (click)="onClearTask(variableClear)">Clear Completed</div>
 </div>
