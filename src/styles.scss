@@ -12,3 +12,12 @@ body {
 body.dark{
     background-color: #171823;
 }
+@media screen and (max-width: 600px) {
+    body{
+        font-size: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+}

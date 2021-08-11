@@ -12,7 +12,7 @@ const httpOption = {
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:3000/tasks'
+  private apiUrl = 'https://todo-json-lomaru.herokuapp.com/tasks'
   constructor(private http:HttpClient) { }
 
   getTasks() :Observable<Task[]> {
