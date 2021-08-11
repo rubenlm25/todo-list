@@ -1,8 +1,8 @@
 .add-form {
     display: flex;
     align-items: center;
-    width: 585px;
-    height: 65px;
+    width: 540px;
+    height: 64px;
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif;
     margin: 0 auto;
@@ -10,8 +10,10 @@
     color: #9495A5;
     position: relative;
     background-color: white;
-    padding-left: 24px;
     top: -200px;
+    padding-left: 24px;
+    padding-right: 24px;
+    
 
     .input-checkbox {
         width: 24px;
@@ -38,6 +40,10 @@
         font-weight: 400;
         line-height: 18px;
         letter-spacing: -0.25px;
+        color: #393A4B;
+    }
+    .input-text::placeholder{
+       color: #9495A5;
     }
 
     .input-text:focus {
@@ -49,5 +55,9 @@
     background-color: #25273D;
     .input-text{
         background-color: #25273D;
+        color: #C8CBE7;
+    }
+    .input-text::placeholder{
+        color: #767992;
     }
 }

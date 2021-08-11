@@ -42,6 +42,9 @@
         line-height: 18px;
         letter-spacing: -0.25px;
     }
+    .task-text:hover{
+        cursor: pointer;
+    }
     .task-text.reminder{
         text-decoration: line-through;
         color: #D1D2DA;
@@ -56,15 +59,25 @@
         cursor: pointer;
     }
 }
+
 .task.disable{
     .cross{
         display: none;
     }
 }
-.task.dark{
-    background-color: #25273D;
-    border-bottom: #393A4B solid;
-    .task-text.reminder{
-        color: #4D5067;
-    }
-}
+
+    .task.dark{
+        background-color: #25273D;
+        border-bottom: #393A4B solid;
+        .task-text:hover{
+            cursor: pointer;
+        }
+        .task-text{
+            color: #C8CBE7;
+            background-color: #25273D;
+        }
+        .task-text.reminder{
+            color:#4D5067;
+        }
+     }
+

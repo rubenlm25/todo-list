@@ -16,10 +16,6 @@ export class AddTaskComponent implements OnInit {
   }
 
   onSubmit(){
-    // if(!this.text){
-    //   alert('please add a task');
-    //   return;
-    // }
     const newTask={
       text: this.text,
       reminder:this.reminder

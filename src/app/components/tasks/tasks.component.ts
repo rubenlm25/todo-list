@@ -41,8 +41,15 @@ export class TasksComponent implements OnInit {
   }
 
   onCount(tasks: Task[]){
-    let taskFiltered= tasks.filter(tasks =>tasks.reminder == false);
-    let count = taskFiltered.length;
+    let count;
+    let taskFiltered;
+    if(this.filter=='completed'){
+      taskFiltered = this.tasks.filter(tasks =>tasks.reminder == false);
+    }
+    else{
+      taskFiltered= tasks.filter(tasks =>tasks.reminder == false);
+    }
+    count = taskFiltered.length;
     this.itemLeft= count;
     return count;
   }
@@ -56,6 +63,7 @@ export class TasksComponent implements OnInit {
         break;
       case 'completed' :
         this.taskService.getTasks().subscribe((tasks) => this.tasksFiltered = tasks.filter(task => task.reminder == true));
+        this.taskService.getTasks().subscribe((tasks) => this.tasks = tasks);
         break;
       default:
         this.taskService.getTasks().subscribe((tasks) => this.tasksFiltered = tasks);

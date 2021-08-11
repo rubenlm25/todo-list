@@ -25,6 +25,8 @@ export class HeaderComponent implements OnInit {
       document.getElementsByClassName("header")[0].classList.replace("light","dark");
       document.getElementById("toogle").classList.replace("light","dark");
       document.getElementById("bcg").classList.replace("light","dark");
+      document.getElementsByClassName("task-option")[0].classList.replace("light","dark");
+      document.getElementsByClassName("list")[0].classList.replace("light","dark");
     }
     else if(document.getElementById("toogle").classList.contains("dark")){
       document.getElementsByClassName("add-form")[0].classList.replace("dark","light");
@@ -38,6 +40,9 @@ export class HeaderComponent implements OnInit {
       document.getElementsByClassName("header")[0].classList.replace("dark","light");
       document.getElementById("toogle").classList.replace("dark","light");
       document.getElementById("bcg").classList.replace("dark","light");
+      document.getElementsByClassName("task-option")[0].classList.replace("dark","light");
+      document.getElementsByClassName("list")[0].classList.replace("dark","light");
+
     }   
 
     
