@@ -31,8 +31,8 @@ export class TasksComponent implements OnInit {
   toogleReminder(task: Task){
     task.reminder = !task.reminder;
     this.taskService.updateTaskReminder(task).subscribe();
-    this.onTest(this.filter);
-    
+    setTimeout(()=>{this.onTest(this.filter);
+    },50)    
   }
 
   addTask(task: Task){
@@ -54,6 +54,8 @@ export class TasksComponent implements OnInit {
     return count;
   }
   onTest(params){
+    console.log('passer ici');
+    
     switch(params){
       case 'all':
         this.taskService.getTasks().subscribe((tasks) => this.tasksFiltered = tasks);
