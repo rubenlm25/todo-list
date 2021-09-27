@@ -1,6 +1,6 @@
 import { TaskService } from './../../services/task.service';
-import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
-
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { TasksComponent } from '../tasks/tasks.component';
 
 
 @Component({
@@ -9,22 +9,39 @@ import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
   styleUrls: ['./task-option.component.scss']
 })
 export class TaskOptionComponent implements OnInit {
-  @Input() itemLeft = '';
-  @Output() filterArg = new EventEmitter();
   @Output() clearTask = new EventEmitter();
-  filterTodo :string = 'all';
   variableClear :boolean = true
+  itemLeft :number;
+  filterTodo: string;
+  subscriptionItem;
+  subscriptionFilter
+
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
-  }
-  onChangeFilter(params){
-    this.filterArg.emit(params);
+    this.subscriptionItem = this.taskService.getCount().subscribe(
+      res => {
+        this.itemLeft = res.value;
+      },
+      err => {
+        console.error(`An error occurred: ${err.message}`);
+      }
+    );
+
+    this.subscriptionFilter = this.taskService.getFilter().subscribe(
+      res => {
+        this.filterTodo = res;
+      },
+      err => {
+        console.error(`An error occurred: ${err.message}`);
+      }
+    );
   }
   filterChange(params){
     this.filterTodo = params;
-    this.onChangeFilter(params);
+    this.taskService.setFilter(this.filterTodo);
+
   }
 
   onClearTask(variableClear){

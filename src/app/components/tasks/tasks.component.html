@@ -5,5 +5,5 @@
         (onToogleReminder)="toogleReminder(task)"
     >
     </app-task-item>
-<app-task-option [itemLeft]="onCount(tasksFiltered)" (filterArg)="onTest($event)" (clearTask)="onClear($event)"></app-task-option>
+<app-task-option (filterArg)="onTest($event)" (clearTask)="onClear($event)"></app-task-option>
 

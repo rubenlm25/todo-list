@@ -1,4 +1,3 @@
-import { element } from 'protractor';
 import { TaskService } from '../../services/task.service';
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/Task';
@@ -14,14 +13,52 @@ export class TasksComponent implements OnInit {
   tasksFiltered: Task[] = [];
   itemLeft: number;
   filter: string = 'all';
+  subscriptionCount;
+  currentCount :number;
+  currentFilter :string
+  subscriptionFilter;
+  subscriptionFilterFonction;
+  observer;
   
-  constructor(private taskService: TaskService) { }
+
+  
+    constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks) => this.tasks = tasks);
     this.taskService.getTasks().subscribe((tasks) => this.tasksFiltered = tasks);
+    setTimeout(()=>{this.startCount(this.tasks);
+    },1000); 
+    this.subscriptionCount = this.taskService.getCount().subscribe(
+      res => {
+        this.currentCount = res.value;
+        console.log('changement de valeur');
+      },
+      err => {
+        console.error(`An error occurred: ${err.message}`);
+      }
+    );
+    this.subscriptionFilter = this.taskService.getFilter().subscribe(
+      res => {
+        this.currentFilter = res; 
+        this.onTest(this.currentFilter);   
+      },
+      err => {
+        console.error(`An error occurred: ${err.message}`);
+      }
+    );
+  }
+  increment(): void {
+    this.taskService.setCount(this.currentCount, 1);
+  }
+
+  decrement(): void {
+    this.taskService.setCount(this.currentCount, -1);
   }
   deleteTask(task: Task){
+    if(task.reminder == false){
+      this.decrement()
+    }
     this.taskService
     .deleteTask(task)
     .subscribe(
@@ -31,28 +68,26 @@ export class TasksComponent implements OnInit {
   toogleReminder(task: Task){
     task.reminder = !task.reminder;
     this.taskService.updateTaskReminder(task).subscribe();
+    if(task.reminder == true){
+      this.decrement()
+    }
+    else{
+      this.increment()
+    }
     setTimeout(()=>{this.onTest(this.filter);
     },50)    
   }
 
   addTask(task: Task){
     this.taskService.addTask(task).subscribe((task)=>(this.tasksFiltered.push(task)));
-    
+    if(task.reminder == false){
+      this.increment()
+    }
   }
 
-  onCount(tasks: Task[]){
-    let count;
-    let taskFiltered;
-    if(this.filter=='completed'){
-      taskFiltered = this.tasks.filter(tasks =>tasks.reminder == false);
-    }
-    else{
-      taskFiltered= tasks.filter(tasks =>tasks.reminder == false);
-    }
-    count = taskFiltered.length;
-    this.itemLeft= count;
-    return count;
-  }
+
+
+
   onTest(params){
     console.log('passer ici');
     
@@ -71,6 +106,7 @@ export class TasksComponent implements OnInit {
         this.taskService.getTasks().subscribe((tasks) => this.tasksFiltered = tasks);
     }
     this.filter=params;
+    
   }
   onClear(params){
     this.taskService.getTasks().subscribe((tasks) => this.tasksFiltered = tasks);
@@ -97,4 +133,13 @@ export class TasksComponent implements OnInit {
     console.log('done');
     
   }
+  startCount(tasks: Task[]){
+    let count;
+    let taskFiltered;
+    taskFiltered = this.tasks.filter(tasks =>tasks.reminder == false);
+    count = taskFiltered.length;
+    this.taskService.startCount(count);
+    console.log(count);
+    
+}
 }
